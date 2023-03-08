@@ -1,0 +1,75 @@
+/* @import '../../scss/mixin';
+@import '../../scss/variables'; */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+ 
+    cursor: pointer;
+    width: 52px; 
+
+    /* border-radius: 5px; */
+    background-color: #333333;
+    /* font-family: $main-font; */
+    font-size: 15px;
+    color: white;
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    margin-top: 1px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-out;
+  }
+  .drop_block{
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: #BFBFBF;
+    /* border-color: white !important; */
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+   
+    background-color: #333333;
+    /* font-family: $main-font; */
+    font-size: 15px;
+    color: white;
+    outline: none;
+    border: 1px solid transparent;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-out;
+  }
+  
+  .dropdown-content a:hover {color:white}
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+
+
+
+
+
+
+
+
+  
