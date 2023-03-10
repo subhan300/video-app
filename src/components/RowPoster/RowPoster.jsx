@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 
 const RowPoster = ({ item }) => {
   console.log("item ", item);
+  let describe = item?.description.slice(0, 95);
+  describe +="......"
   // const { item, item: { title, original_name, original_title, name, genre_ids, poster_path, backdrop_path }, isLarge, isFavourite } = result;
   // let fallbackTitle = title || original_title || name || original_name;
   // const genresConverted = useGenreConversion(genre_ids);
@@ -37,14 +39,18 @@ const RowPoster = ({ item }) => {
   // const parsePosterImage = JSON.parse(posterImage).img_name;
 
   return (
-   <div>
-	 <div
-      className={`Row__poster ${"Row__poster--big"}`}
-      onClick={handleModalOpening}
-    >
-		
-      <img alt="IMAGE NOT COMING " src={"https://d3vhqpj1qjdilw.cloudfront.net/815693a0-17f6-4aef-a1b3-ea6810079f81/thumbnails/p360/portrait-p360.jpg"} />
-      {/* {isLarge ? (
+    <div>
+      <div
+        className={`Row__poster ${"Row__poster--big"}`}
+        onClick={handleModalOpening}
+      >
+        <img
+          alt="IMAGE NOT COMING "
+          src={
+            "https://d3vhqpj1qjdilw.cloudfront.net/815693a0-17f6-4aef-a1b3-ea6810079f81/thumbnails/p360/portrait-p360.jpg"
+          }
+        />
+        {/* {isLarge ? (
 				poster_path ? (
 					<img src={`${BASE_IMG_URL}/${poster_path}`} alt={fallbackTitle} />
 				) : ""
@@ -58,53 +64,52 @@ const RowPoster = ({ item }) => {
 					</div>
 				</>
 			)} */}
-      <div className="Row__poster-info">
-        <div className="Row__poster-info--iconswrp">
-          <Link
-            className="Row__poster-info--icon icon--play"
-            onClick={handlePlayAction}
-            to={"/play"}
-          >
-            <FaPlay />
-          </Link>
-          {!false ? (
-            <button
-              className="Row__poster-info--icon icon--favourite"
-              onClick={handleAdd}
+        <div className="Row__poster-info">
+          <div className="Row__poster-info--iconswrp">
+            <Link
+              className="Row__poster-info--icon icon--play"
+              onClick={handlePlayAction}
+              to={"/play"}
             >
-              <FaPlus />
+              <FaPlay />
+            </Link>
+            {!false ? (
+              <button
+                className="Row__poster-info--icon icon--favourite"
+                onClick={handleAdd}
+              >
+                <FaPlus />
+              </button>
+            ) : (
+              <button
+                className="Row__poster-info--icon icon--favourite"
+                onClick={handleRemove}
+              >
+                <FaMinus />
+              </button>
+            )}
+            <button className="Row__poster-info--icon icon--toggleModal">
+              <FaChevronDown onClick={handleModalOpening} />
             </button>
-          ) : (
-            <button
-              className="Row__poster-info--icon icon--favourite"
-              onClick={handleRemove}
-            >
-              <FaMinus />
-            </button>
-          )}
-          <button className="Row__poster-info--icon icon--toggleModal">
-            <FaChevronDown onClick={handleModalOpening} />
-          </button>
-        </div>
-        <div className="Row__poster-info--title">
-          {/* <h3>{fallbackTitle}</h3> */}
-          <h3>{item?.title}</h3>
-        </div>
-        <div className="Row__poster-info--genres">
-          <span>{item?.description}</span>
-          {/* {genresConverted && genresConverted.map(genre => (
+          </div>
+          <div className="Row__poster-info--title">
+            {/* <h3>{fallbackTitle}</h3> */}
+            <h3>{item?.title}</h3>
+          </div>
+          <div className="Row__poster-info--genres">
+            <span>{describe}</span>
+            {/* {genresConverted && genresConverted.map(genre => (
 						<span key={`Genre--id_${genre}`} className="genre-title">{genre}</span>
 					))} */}
+          </div>
         </div>
       </div>
-
-    </div>
-	{/* <br /><br />
+      {/* <br /><br />
 	<video width="320" height="240" controls>
 	<source src="https://d1m521lmpek5gg.cloudfront.net/" type="video/mp4" />
 	Your browser does not support the video tag.
   </video> */}
-   </div>
+    </div>
   );
 };
 

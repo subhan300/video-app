@@ -12,6 +12,7 @@
   .large_dropdown {
     position: relative;
     display: inline-block;
+    background-color:black;
   }
   
   .large_dropdown-content {
@@ -36,10 +37,13 @@
   }
   .large_drop_block{
     display: block;
+    z-index: 100;
   }
   
   .large_dropdown-content a {
     color: #BFBFBF;
+
+    z-index: 100;
     /* border-color: white !important; */
     display: flex;
     height: 40px;
@@ -77,12 +81,15 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items:space-evenly;
-    height: 30vh;
+    width:700px;
+    height: 40vh;
+    background-color: black;
+    overflow-x: auto;
+
 }
 
 .row_content{
     width:190px;
-    /* border:1px solid red; */
     /* text-align: start; */
     display: flex;
     justify-content: flex-start;

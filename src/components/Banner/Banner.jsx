@@ -106,7 +106,7 @@ const Banner = ({ type ,categoryList}) => {
 							</motion.p>
 						</div>
 
-				<div>
+				<div >
 					<LargeDropdown categoryList={categoryList}   blockContent={blockContent} setBlockContent={setBlockContent}  setSelectEelement={setSelectEelement} >
 					<button className='dropdown_genres'>
         
