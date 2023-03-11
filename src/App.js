@@ -13,6 +13,7 @@ import Otp from "./pages/otp/Otp";
 import { Auth, Amplify } from "aws-amplify";
 import { userLoggedInState } from "./store/reducer-slice/auth";
 import Profile from "./pages/Profile/Profile";
+import Detailpage from "./pages/DetailPage/Detailpgae";
 import Rough from "./rough";
 const App = () => {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ const App = () => {
         ) : (
           <Routes>
             <Route path="/" element={<AuthC />}></Route>
+            <Route path="/Detailpage" element={<Detailpage />}></Route>
           </Routes>
         )}
         <Routes>

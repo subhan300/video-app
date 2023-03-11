@@ -1,0 +1,92 @@
+.container {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+.row:first-child {
+    width: 80%;
+  }
+  
+  .row:last-child {
+    width: 20%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+.heading-color {
+    padding-top: 20px;
+    color: black;
+}
+
+.scrolling-wrapper {
+    padding: 10px 50px 10px 50px;
+    height: 450px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.card {
+    margin: 20px 20px 100px 0px;
+    background-color: white;
+    display: inline-block;
+    height: 300px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.actor-section {
+    padding: 10px;
+}
+
+.actor-name {
+    color: black;
+    font-size: 20px;
+}
+
+.actor-character {
+    color: black;
+
+}
+/* Sidebar section */
+.sidebar-section{
+    padding: 50px 0px 0px 20px;
+}
+.language,.status,.budget,.revenue{
+    padding-bottom: 20px;
+}
+.status-title,.language-title,.budget-title,.revenue-title{
+    color: black;
+    text-decoration: solid;
+}
+.status-detail,.language-detail,.budget-detail,.revenue-detail{
+    color: black;
+}
+/* Media queries */
+@media (max-width: 768px) {
+    .container {
+        height: 850px;
+      }
+    .row {
+        flex-direction: row;
+    }
+    .row:first-child {
+        width: 100%;
+      }
+      
+      .row:last-child {
+        width: 100%;
+        margin-top: 20px;
+      }
+      
+      .scrolling-wrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+  }
