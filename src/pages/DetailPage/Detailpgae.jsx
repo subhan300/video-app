@@ -5,6 +5,15 @@ import { motion } from "framer-motion"
 import Navbar from "../../components/Navbar/Navbar";
 import Banner from '../../components/Banner/Banner'
 import { defaultPageFadeInVariants } from "../../motionUtils";
+import RowPoster from "../../components/RowPoster/RowPoster";
+import Row from "../../components/Row/Row";
+import Poster from "../../components/Poster/Poster";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.scss";
+import "swiper/components/pagination/pagination.scss";
+
 const Detailpage = () => {
     const [categoryList, setCategoryList] = useState([]);
     useEffect(() => {
@@ -15,8 +24,7 @@ const Detailpage = () => {
             setCategoryList(categoryListResponse);
         }
         categoryList();
-    }, []);
-    console.log("category list ", categoryList);
+    }, []); 
     return (
         <>
             <Navbar />
@@ -25,6 +33,13 @@ const Detailpage = () => {
             <div className="row">
                 <div className="scrolling-wrapper">
                 <h1 className='heading-color'>Top Billed Cast</h1>
+                <Swiper
+                spaceBetween={50}
+                slidesPerView={3}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+                >
+                <SwiperSlide>
                 <div className="card">
                     <div>
                         <img src="https://images.unsplash.com/photo-1678541192455-e1e96bdf1b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"></img>
@@ -34,6 +49,8 @@ const Detailpage = () => {
                         <p className="actor-character">Spiderman/Peter Parker</p>
                     </div>
                 </div>
+                </SwiperSlide>
+                <SwiperSlide>
                 <div className="card">
                     <div>
                         <img src="https://images.unsplash.com/photo-1678541192455-e1e96bdf1b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"></img>
@@ -43,6 +60,8 @@ const Detailpage = () => {
                         <p className="actor-character">Spiderman/Peter Parker</p>
                     </div>
                 </div>
+                </SwiperSlide>
+                <SwiperSlide>
                 <div className="card">
                     <div>
                         <img src="https://images.unsplash.com/photo-1678541192455-e1e96bdf1b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"></img>
@@ -52,6 +71,8 @@ const Detailpage = () => {
                         <p className="actor-character">Spiderman/Peter Parker</p>
                     </div>
                 </div>
+                </SwiperSlide>
+                <SwiperSlide>
                 <div className="card">
                     <div>
                         <img src="https://images.unsplash.com/photo-1678541192455-e1e96bdf1b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"></img>
@@ -61,6 +82,8 @@ const Detailpage = () => {
                         <p className="actor-character">Spiderman/Peter Parker</p>
                     </div>
                 </div>
+                </SwiperSlide>
+                <SwiperSlide>
                 <div className="card">
                     <div>
                         <img src="https://images.unsplash.com/photo-1678541192455-e1e96bdf1b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"></img>
@@ -70,6 +93,8 @@ const Detailpage = () => {
                         <p className="actor-character">Spiderman/Peter Parker</p>
                     </div>
                 </div>
+                </SwiperSlide>
+                <SwiperSlide>
                 <div className="card">
                     <div>
                         <img src="https://images.unsplash.com/photo-1678541192455-e1e96bdf1b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"></img>
@@ -79,24 +104,9 @@ const Detailpage = () => {
                         <p className="actor-character">Spiderman/Peter Parker</p>
                     </div>
                 </div>
-                <div className="card">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1678541192455-e1e96bdf1b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"></img>
-                    </div>
-                    <div className="actor-section">
-                        <h3 className="actor-name">Tobey Margue</h3>
-                        <p className="actor-character">Spiderman/Peter Parker</p>
-                    </div>
-                </div>
-                <div className="card">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1678541192455-e1e96bdf1b9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80"></img>
-                    </div>
-                    <div className="actor-section">
-                        <h3 className="actor-name">Tobey Margue</h3>
-                        <p className="actor-character">Spiderman/Peter Parker</p>
-                    </div>
-                </div>
+                </SwiperSlide>
+                </Swiper>
+                
 
             </div>
                 

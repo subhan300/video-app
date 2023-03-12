@@ -1,5 +1,4 @@
 .container {
-    background-color: white;
     display: flex;
     flex-wrap: wrap;
     height: 600px;
@@ -17,41 +16,35 @@
   
   .row:last-child {
     width: 20%;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 .heading-color {
     padding-top: 20px;
-    color: black;
+    color: white;
 }
 
 .scrolling-wrapper {
     padding: 10px 50px 10px 50px;
     height: 450px;
-    overflow-x: scroll;
-    overflow-y: hidden;
     white-space: nowrap;
-    background-color: white;
 }
-
 .card {
     margin: 20px 20px 100px 0px;
-    background-color: white;
     display: inline-block;
     height: 300px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .actor-section {
     padding: 10px;
 }
-
 .actor-name {
-    color: black;
+    color: white;
     font-size: 20px;
 }
 
 .actor-character {
-    color: black;
+    color: white;
 
 }
 /* Sidebar section */
@@ -62,11 +55,11 @@
     padding-bottom: 20px;
 }
 .status-title,.language-title,.budget-title,.revenue-title{
-    color: black;
+    color: white;
     text-decoration: solid;
 }
 .status-detail,.language-detail,.budget-detail,.revenue-detail{
-    color: black;
+    color: white;
 }
 /* Media queries */
 @media (max-width: 768px) {
