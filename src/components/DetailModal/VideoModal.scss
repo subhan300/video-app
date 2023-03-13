@@ -12,7 +12,24 @@
   align-items: center;
 
 }
+.modal_action_list{
+    display: flex;
+    justify-content: flex-start;
+    gap: 13px;
+}
+.modal_action_list>div{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.modal_action_list>div>h1{
+    font-size: 16px;
+    margin-top: 7px;
 
+    
+}
 .hide {
   display: none;
 }
@@ -51,9 +68,10 @@
     position: relative;
     margin: auto auto;
     z-index: 100;
-    height: 70vh;
+    height: 100vh;
     overflow-y: auto;
     background-color: black;
+    padding-bottom: 1.5rem;
     
 
 }
