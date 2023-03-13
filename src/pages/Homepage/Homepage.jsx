@@ -11,6 +11,8 @@ import {
   getCategoryList,
   getHomePage,
 } from "../../services/graphql-apis/graphqlQueries";
+import DetailModal from "../../components/DetailModal/DetailModal";
+import VideoModal from "../../components/DetailModal/VideoModal";
 const Homepage = () => {
   const [categoryList, setCategoryList] = useState([]);
   const [movieData, setMovieData] = useState([]);
@@ -25,6 +27,7 @@ const Homepage = () => {
     callApi();
   }, []);
   console.log("moved ata", movieData);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     async function categoryList() {
@@ -40,6 +43,8 @@ const Homepage = () => {
   //  getCategoryListById()
   return (
     <>
+      {/* <DetailModal showModal={showModal} setShowModal={setShowModal} /> */}
+      <VideoModal showModal={showModal} setShowModal={setShowModal} />
       <Navbar />
       {/* <DetailModal /> */}
 
@@ -52,8 +57,17 @@ const Homepage = () => {
       >
         <Banner categoryList={categoryList} />
 
-        {movieData?.map((val) => {
-          return <Row movieData={val} category={val.title} />;
+        {movieData?.map((val, i) => {
+          return (
+            <div key={i}>
+              <Row
+                movieData={val}
+                category={val.title}
+                showModal={showModal}
+                setShowModal={setShowModal}
+              />
+            </div>
+          );
         })}
         {/* <Credits /> */}
       </motion.div>

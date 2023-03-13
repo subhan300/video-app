@@ -10,10 +10,10 @@ import { FaPlus, FaMinus, FaPlay, FaChevronDown } from "react-icons/fa";
 import { showModalDetail } from "../../redux/modal/modal.actions";
 import { Link } from "react-router-dom";
 
-const RowPoster = ({ item }) => {
+const RowPoster = ({ item, setShowModal }) => {
   console.log("item ", item);
   let describe = item?.description.slice(0, 95);
-  describe +="......"
+  describe += "......";
   // const { item, item: { title, original_name, original_title, name, genre_ids, poster_path, backdrop_path }, isLarge, isFavourite } = result;
   // let fallbackTitle = title || original_title || name || original_name;
   // const genresConverted = useGenreConversion(genre_ids);
@@ -28,9 +28,10 @@ const RowPoster = ({ item }) => {
     dispatch(removeFromFavourites({ ...item, isFavourite }));
   };
   const handleModalOpening = () => {
-    dispatch(
-      showModalDetail({ ...item, fallbackTitle, genresConverted, isFavourite })
-    );
+    setShowModal(true);
+    // dispatch(
+    //   showModalDetail({ ...item, fallbackTitle, genresConverted, isFavourite })
+    // );
   };
   const handlePlayAction = (event) => {
     event.stopPropagation();
@@ -47,7 +48,7 @@ const RowPoster = ({ item }) => {
         <img
           alt="IMAGE NOT COMING "
           src={
-            "https://d3vhqpj1qjdilw.cloudfront.net/815693a0-17f6-4aef-a1b3-ea6810079f81/thumbnails/p360/portrait-p360.jpg"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTguUz4ldoo8sLn1UQXoCmUiXwxdRTVxJPb9N-QkAEPYg&s"
           }
         />
         {/* {isLarge ? (

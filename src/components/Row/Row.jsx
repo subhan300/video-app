@@ -20,7 +20,7 @@ import { useGetMovieApiQuery } from "../../store/rtk-queries/getMovies";
 import { getMovies } from "../../services/graphql-apis/moviesQueries";
 SwiperCore.use([Navigation, Pagination]);
 
-const Row = ({ category, movieData }) => {
+const Row = ({ category, movieData, setShowModal, showModal }) => {
   console.log("movie data>>>>>>>>s", movieData);
   // debugger
 
@@ -132,17 +132,17 @@ const Row = ({ category, movieData }) => {
             }}
           >
             {!isLoading &&
-			  
               movieData?.VideoTitles?.items?.length > 0 &&
               movieData?.VideoTitles?.items?.map((result, i) => (
                 <SwiperSlide
-                  key={innerWidth}
+                  key={i}
                   className={insertPositionClassName(i)}
                   onMouseOver={rightMouseOver}
                   onMouseOut={rightMouseOut}
                 >
                   <RowPoster
                     item={result}
+                    setShowModal={setShowModal}
                     // isLarge={isLarge}
                     // isFavourite={result.isFavourite}
                     key={i}
@@ -150,6 +150,7 @@ const Row = ({ category, movieData }) => {
 
                   {/* <div><h1>subhan</h1></div> */}
                 </SwiperSlide>
+                // </div>
               ))}
           </Swiper>
         </div>
